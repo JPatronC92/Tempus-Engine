@@ -1,0 +1,54 @@
+# Tempus .gitignore
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.venv/
+venv/
+ENV/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# uv
+.uv/
+.uv-cache/
+
+# Rust
+target/
+**/target/
+Cargo.lock
+**/*.rs.bk
+
+# Benchmark output
+engine/target/criterion/
+
+# WASM / JS
+node_modules/
+
+# Docs output
+site/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo

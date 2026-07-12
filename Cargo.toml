@@ -1,0 +1,28 @@
+[workspace]
+members = [
+    "engine",
+    "bindings/python",
+    "bindings/wasm",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+license = "AGPL-3.0-or-later"
+repository = "https://github.com/JPatronC92/Tempus-Engine"
+homepage = "https://github.com/JPatronC92/Tempus-Engine"
+authors = ["JPatronC92"]
+
+[workspace.dependencies]
+serde_json = "1.0"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+# Optimise WASM builds for size instead of speed
+[profile.release.package.tempus-engine-wasm]
+opt-level = "s"

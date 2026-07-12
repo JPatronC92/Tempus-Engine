@@ -1,0 +1,65 @@
+[
+  {
+    "name": "credit-check",
+    "version": "1.3.0",
+    "tags": [
+      "credit",
+      "prod"
+    ],
+    "required_context_keys": [
+      "credit_score",
+      "annual_income"
+    ],
+    "logic": {
+      "if": [
+        {
+          "and": [
+            {
+              ">=": [
+                {
+                  "var": "credit_score"
+                },
+                680
+              ]
+            },
+            {
+              ">=": [
+                {
+                  "var": "annual_income"
+                },
+                45000
+              ]
+            }
+          ]
+        },
+        "approved",
+        "denied"
+      ]
+    }
+  },
+  {
+    "name": "fraud-block",
+    "version": "2.0.0",
+    "tags": [
+      "fraud",
+      "prod"
+    ],
+    "required_context_keys": [
+      "risk_score"
+    ],
+    "logic": {
+      "if": [
+        {
+          ">": [
+            {
+              "var": "risk_score"
+            },
+            0.8
+          ]
+        },
+        "block",
+        "allow"
+      ]
+    }
+  }
+]

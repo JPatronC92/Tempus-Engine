@@ -1,0 +1,28 @@
+[build-system]
+requires = ["maturin>=1.6,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "tempus-engine"
+version = "0.1.0"
+description = "Deterministic rule execution for decision systems — Python bindings"
+authors = [{ name = "JPatronC92" }]
+license = { text = "AGPL-3.0-or-later" }
+readme = "../../README.md"
+requires-python = ">=3.9"
+keywords = ["rules", "decisions", "json-logic", "engine"]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Topic :: Software Development :: Libraries",
+]
+
+[project.optional-dependencies]
+dev = ["pytest >= 8.0", "maturin >= 1.6"]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+module-name = "tempus_engine"
+manifest-path = "Cargo.toml"

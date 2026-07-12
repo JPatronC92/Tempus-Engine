@@ -1,0 +1,21 @@
+{
+  "name": "tempus-engine",
+  "version": "0.1.0",
+  "description": "Deterministic rule execution for decision systems — WebAssembly bindings",
+  "license": "AGPL-3.0-or-later",
+  "main": "tempus_engine_wasm.js",
+  "types": "tempus_engine_wasm.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JPatronC92/Tempus-Engine"
+  },
+  "keywords": ["wasm", "rules", "json-logic", "decisions", "deterministic"],
+  "scripts": {
+    "build": "wasm-pack build --target web --out-dir pkg",
+    "build:node": "wasm-pack build --target nodejs --out-dir pkg-node",
+    "test": "wasm-pack test --node"
+  },
+  "devDependencies": {
+    "wasm-pack": "^0.12"
+  }
+}

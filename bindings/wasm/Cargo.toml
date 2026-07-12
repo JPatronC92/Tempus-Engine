@@ -1,0 +1,25 @@
+[package]
+name = "tempus-engine-wasm"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "WebAssembly bindings for Tempus Engine"
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+documentation = "https://docs.rs/tempus-engine-wasm"
+keywords = ["rules", "decisions", "wasm", "json-logic", "webassembly"]
+categories = ["wasm", "algorithms"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+tempus-engine = { path = "../../engine" }
+wasm-bindgen = "0.2"
+serde_json.workspace = true
+js-sys = "0.3"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3"

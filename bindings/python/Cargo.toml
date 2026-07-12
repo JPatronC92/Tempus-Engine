@@ -1,0 +1,23 @@
+[package]
+name = "tempus-engine-py"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Python bindings for Tempus Engine via PyO3"
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+
+[lib]
+name = "tempus_engine"
+crate-type = ["cdylib"]
+
+[dependencies]
+tempus-engine = { path = "../../engine" }
+pyo3 = { version = "0.22", features = ["extension-module"] }
+serde_json.workspace = true
+
+[lints.rust]
+# PyO3 generates some unreachable patterns in match arms — this is expected.
+unreachable_patterns = "allow"
