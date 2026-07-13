@@ -15,7 +15,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 tempus-engine = { path = "../../engine" }
-pyo3 = { version = "0.22", features = ["extension-module"] }
+pyo3 = { version = "0.29.0", features = ["extension-module"] }
 serde_json.workspace = true
 
 [lints.rust]

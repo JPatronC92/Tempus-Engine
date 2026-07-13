@@ -35,7 +35,7 @@ pip-wheel-metadata/
 # Rust
 target/
 **/target/
-Cargo.lock
+
 **/*.rs.bk
 
 # Benchmark output
