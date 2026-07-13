@@ -67,7 +67,7 @@ jobs:
       - name: Install cargo-audit
         run: cargo install cargo-audit --locked
       - name: Run security audit
-        run: cargo audit --ignore RUSTSEC-2021-0145 --ignore RUSTSEC-2025-0020
+        run: cargo audit --ignore RUSTSEC-2021-0145
 
   coverage:
     name: Coverage
